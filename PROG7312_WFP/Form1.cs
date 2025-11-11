@@ -12,7 +12,11 @@ namespace PROG7312_WFP
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Form load logic
+            // Initialize service request sample data
+            if (ServiceRequestManager.GetTotalCount() == 0)
+            {
+                ServiceRequestManager.InitializeSampleData();
+            }
         }
 
         private void reportIssuesMenuItem_Click(object sender, EventArgs e)
@@ -29,11 +33,8 @@ namespace PROG7312_WFP
 
         private void serviceStatusMenuItem_Click(object sender, EventArgs e)
         {
-            // Service Request Status menu item (To be implemented in Part 3)
-            MessageBox.Show("Service Request Status feature will be implemented in Part 3.",
-                "Coming Soon",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            // Service Request Status menu item - NOW IMPLEMENTED!
+            ShowServiceRequestStatusForm();
         }
 
         private void ShowReportIssuesForm()
@@ -47,6 +48,13 @@ namespace PROG7312_WFP
         {
             EventsForm localEventsForm = new EventsForm();
             localEventsForm.Show();
+            this.Hide();
+        }
+
+        private void ShowServiceRequestStatusForm()
+        {
+            ServiceRequestStatusForm serviceStatusForm = new ServiceRequestStatusForm();
+            serviceStatusForm.Show();
             this.Hide();
         }
 

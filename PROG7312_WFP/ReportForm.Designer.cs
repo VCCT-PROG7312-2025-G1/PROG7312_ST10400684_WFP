@@ -19,127 +19,134 @@
 
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtLocation = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.rtbDescription = new System.Windows.Forms.RichTextBox();
-            this.btnUpload = new System.Windows.Forms.Button();
-            this.fileAttachmentDialog = new System.Windows.Forms.OpenFileDialog();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-
+            label1 = new Label();
+            txtLocation = new TextBox();
+            label2 = new Label();
+            comboBoxCategory = new ComboBox();
+            label3 = new Label();
+            rtbDescription = new RichTextBox();
+            btnUpload = new Button();
+            fileAttachmentDialog = new OpenFileDialog();
+            btnBack = new Button();
+            btnSubmit = new Button();
+            SuspendLayout();
+            // 
             // label1
-
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(147, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(224, 224, 224);
+            label1.Location = new Point(147, 83);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 0;
+            label1.Text = "label1";
+            label1.Click += label1_Click;
+            // 
             // txtLocation
-
-            this.txtLocation.Location = new System.Drawing.Point(272, 80);
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(100, 23);
-            this.txtLocation.TabIndex = 1;
-            this.txtLocation.TextChanged += new System.EventHandler(this.txtLocation_TextChanged);
-
+            // 
+            txtLocation.Location = new Point(272, 80);
+            txtLocation.Name = "txtLocation";
+            txtLocation.Size = new Size(100, 23);
+            txtLocation.TabIndex = 1;
+            txtLocation.TextChanged += txtLocation_TextChanged;
+            // 
             // label2
-
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(147, 133);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(224, 224, 224);
+            label2.BorderStyle = BorderStyle.Fixed3D;
+            label2.Location = new Point(147, 133);
+            label2.Name = "label2";
+            label2.Size = new Size(40, 17);
+            label2.TabIndex = 2;
+            label2.Text = "label2";
+            label2.Click += label2_Click;
             // 
             // comboBoxCategory
             // 
-            this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(261, 130);
-            this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(121, 23);
-            this.comboBoxCategory.TabIndex = 3;
-            this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategory_SelectedIndexChanged);
+            comboBoxCategory.FormattingEnabled = true;
+            comboBoxCategory.Location = new Point(261, 130);
+            comboBoxCategory.Name = "comboBoxCategory";
+            comboBoxCategory.Size = new Size(121, 23);
+            comboBoxCategory.TabIndex = 3;
+            comboBoxCategory.SelectedIndexChanged += comboBoxCategory_SelectedIndexChanged;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(147, 221);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(224, 224, 224);
+            label3.BorderStyle = BorderStyle.FixedSingle;
+            label3.Location = new Point(147, 221);
+            label3.Name = "label3";
+            label3.Size = new Size(40, 17);
+            label3.TabIndex = 4;
+            label3.Text = "label3";
+            label3.Click += label3_Click;
             // 
             // rtbDescription
             // 
-            this.rtbDescription.Location = new System.Drawing.Point(240, 204);
-            this.rtbDescription.Name = "rtbDescription";
-            this.rtbDescription.Size = new System.Drawing.Size(166, 54);
-            this.rtbDescription.TabIndex = 5;
-            this.rtbDescription.Text = "";
-            this.rtbDescription.TextChanged += new System.EventHandler(this.rtbDescription_TextChanged);
+            rtbDescription.Location = new Point(240, 204);
+            rtbDescription.Name = "rtbDescription";
+            rtbDescription.Size = new Size(166, 54);
+            rtbDescription.TabIndex = 5;
+            rtbDescription.Text = "";
+            rtbDescription.TextChanged += rtbDescription_TextChanged;
             // 
             // btnUpload
             // 
-            this.btnUpload.Location = new System.Drawing.Point(282, 296);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(75, 23);
-            this.btnUpload.TabIndex = 6;
-            this.btnUpload.Text = "Upload";
-            this.btnUpload.UseVisualStyleBackColor = true;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            btnUpload.Location = new Point(282, 296);
+            btnUpload.Name = "btnUpload";
+            btnUpload.Size = new Size(75, 23);
+            btnUpload.TabIndex = 6;
+            btnUpload.Text = "Upload";
+            btnUpload.UseVisualStyleBackColor = true;
+            btnUpload.Click += btnUpload_Click;
             // 
             // fileAttachmentDialog
             // 
-            this.fileAttachmentDialog.FileName = "openFileDialog1";
-            this.fileAttachmentDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            fileAttachmentDialog.FileName = "openFileDialog1";
+            fileAttachmentDialog.FileOk += openFileDialog1_FileOk;
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(157, 371);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(160, 52);
-            this.btnBack.TabIndex = 7;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            btnBack.Location = new Point(157, 371);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(160, 52);
+            btnBack.TabIndex = 7;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(371, 371);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(155, 52);
-            this.btnSubmit.TabIndex = 8;
-            this.btnSubmit.Text = "SUBMIT";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            btnSubmit.Location = new Point(371, 371);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(155, 52);
+            btnSubmit.TabIndex = 8;
+            btnSubmit.Text = "SUBMIT";
+            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // ReportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnUpload);
-            this.Controls.Add(this.rtbDescription);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBoxCategory);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtLocation);
-            this.Controls.Add(this.label1);
-            this.Name = "ReportForm";
-            this.Text = "ReportForm";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.report;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnSubmit);
+            Controls.Add(btnBack);
+            Controls.Add(btnUpload);
+            Controls.Add(rtbDescription);
+            Controls.Add(label3);
+            Controls.Add(comboBoxCategory);
+            Controls.Add(label2);
+            Controls.Add(txtLocation);
+            Controls.Add(label1);
+            Name = "ReportForm";
+            Text = "ReportForm";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

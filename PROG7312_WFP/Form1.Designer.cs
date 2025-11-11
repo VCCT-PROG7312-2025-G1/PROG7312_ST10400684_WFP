@@ -27,7 +27,6 @@
             SuspendLayout();
 
             // menuStrip1
-
             menuStrip1.Items.AddRange(new ToolStripItem[] { reportIssuesToolStripMenuItem, localEventsToolStripMenuItem, serviceStatusToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
@@ -36,30 +35,27 @@
             menuStrip1.Text = "menuStrip1";
 
             // reportIssuesToolStripMenuItem
-
             reportIssuesToolStripMenuItem.Name = "reportIssuesToolStripMenuItem";
             reportIssuesToolStripMenuItem.Size = new Size(88, 20);
             reportIssuesToolStripMenuItem.Text = "Report Issues";
             reportIssuesToolStripMenuItem.Click += reportIssuesMenuItem_Click;
 
             // localEventsToolStripMenuItem
-
             localEventsToolStripMenuItem.Name = "localEventsToolStripMenuItem";
             localEventsToolStripMenuItem.Size = new Size(198, 20);
             localEventsToolStripMenuItem.Text = "Local Events and Announcements";
             localEventsToolStripMenuItem.Click += localEventsMenuItem_Click;
 
             // serviceStatusToolStripMenuItem
-
             serviceStatusToolStripMenuItem.Name = "serviceStatusToolStripMenuItem";
             serviceStatusToolStripMenuItem.Size = new Size(136, 20);
             serviceStatusToolStripMenuItem.Text = "Service Request Status";
             serviceStatusToolStripMenuItem.Click += serviceStatusMenuItem_Click;
 
             // pictureBox1
-
+            pictureBox1.BackgroundImage = Properties.Resources._20210806_0113_1_scaled_1_2048x1366;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.images;
             pictureBox1.Location = new Point(0, 24);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(800, 426);
@@ -69,7 +65,6 @@
             pictureBox1.Click += pictureBox1_Click_1;
 
             // Form1
-
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);

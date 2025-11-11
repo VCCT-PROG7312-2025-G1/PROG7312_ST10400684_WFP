@@ -264,40 +264,60 @@ namespace PROG7312_WFP
 
         private void btnViewRecommendation_Click(object sender, EventArgs e)
         {
+            // Check if an item is selected
+            if (listBoxRecommendations.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a recommended event to view.", "No Selection",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Check if it's the placeholder message
+            if (listBoxRecommendations.SelectedItem is string)
+            {
+                MessageBox.Show("No recommendations available yet. Try searching for events first!",
+                    "No Recommendations", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Get the selected event
             if (listBoxRecommendations.SelectedItem is Event selectedEvent)
             {
+                // Clear any existing filters first
+                btnClearFilters_Click(sender, e);
+
+                // Give the UI a moment to refresh
+                Application.DoEvents();
+
                 // Find and select this event in the main list
+                bool eventFound = false;
                 for (int i = 0; i < listBoxEvents.Items.Count; i++)
                 {
                     if (listBoxEvents.Items[i] is Event evt && evt.EventId == selectedEvent.EventId)
                     {
                         listBoxEvents.SelectedIndex = i;
-                        listBoxEvents.TopIndex = i;
+                        listBoxEvents.TopIndex = Math.Max(0, i - 3); // Show event near top of visible area
+                        eventFound = true;
+
+                        // Ensure the details are displayed
+                        DisplayEventDetails(evt);
+                        EventManager.RecordEventView(evt);
+
+                        lblStatus.Text = $"Viewing recommended event: {evt.Title}";
                         break;
                     }
                 }
 
-                // If not in current view, show all events and try again
-                if (listBoxEvents.SelectedItem == null ||
-                    (listBoxEvents.SelectedItem is Event currentEvt && currentEvt.EventId != selectedEvent.EventId))
+                if (!eventFound)
                 {
-                    btnClearFilters_Click(sender, e);
-
-                    for (int i = 0; i < listBoxEvents.Items.Count; i++)
-                    {
-                        if (listBoxEvents.Items[i] is Event evt && evt.EventId == selectedEvent.EventId)
-                        {
-                            listBoxEvents.SelectedIndex = i;
-                            listBoxEvents.TopIndex = i;
-                            break;
-                        }
-                    }
+                    MessageBox.Show($"Could not locate the event '{selectedEvent.Title}' in the current list.",
+                        "Event Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Please select a recommended event to view.", "No Selection",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a valid recommended event to view.", "Invalid Selection",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
